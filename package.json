@@ -1,74 +1,85 @@
 {
-  "name": "sophonjs-blockchain",
-  "version": "4.0.0",
-  "description": "A module to store and interact with blocks",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
-  "scripts": {
-    "prepublishOnly": "npm run lint && npm run test && npm run build",
-    "build": "sophonjs-config-build",
-    "coverage": "sophonjs-config-coverage",
-    "coveralls": "sophonjs-config-coveralls",
-    "docs:build": "typedoc --out docs --mode file --readme none --theme markdown --mdEngine github --excludeNotExported --excludePrivate src",
-    "format": "sophonjs-config-format",
-    "format:fix": "sophonjs-config-format-fix",
-    "tslint": "sophonjs-config-tslint",
-    "tslint:fix": "sophonjs-config-tslint-fix",
-    "tsc": "sophonjs-config-tsc",
-    "lint": "sophonjs-config-lint",
-    "lint:fix": "sophonjs-config-lint-fix",
-    "test": "ts-node node_modules/tape/bin/tape ./test/index.ts"
+  "_from": "sophonjs-blockchain@3.4.0",
+  "_id": "sophonjs-blockchain@3.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-wxPSmt6EQjhbywkFbftKcb0qRFIZWocHMuDa8/AB4eWL/UPYalNcDyLaxYbrDytmhHid3Uu8G/tA3C/TxZBuOQ==",
+  "_location": "/sophonjs-blockchain",
+  "_phantomChildren": {
+    "bn.js": "4.11.8",
+    "create-hash": "1.2.0",
+    "is-hex-prefixed": "1.0.0",
+    "keccak": "1.4.0",
+    "srlp": "2.0.0",
+    "safe-buffer": "5.1.2",
+    "secp256k1": "3.7.1",
+    "strip-hex-prefix": "1.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://octonion.institute/susy-js/sophonjs-blockchain.git"
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "sophonjs-blockchain@3.4.0",
+    "name": "sophonjs-blockchain",
+    "escapedName": "sophonjs-blockchain",
+    "rawSpec": "3.4.0",
+    "saveSpec": null,
+    "fetchSpec": "3.4.0"
   },
-  "keywords": [
-    "sophon",
-    "blockchain"
+  "_requiredBy": [
+    "#USER",
+    "/"
   ],
-  "author": "mjbecze <mjbecze@gmail.com>",
-  "license": "MPL-2.0",
+  "_resolved": "https://registry.npmjs.org/sophonjs-blockchain/-/sophonjs-blockchain-3.4.0.tgz",
+  "_shasum": "92240da6ecd86b3d8d324df69510b381f26c966b",
+  "_spec": "sophonjs-blockchain@3.4.0",
+  "_where": "/home/user",
+  "author": {
+    "name": "mjbecze",
+    "email": "mjbecze@gmail.com"
+  },
   "bugs": {
     "url": "https://octonion.institute/susy-js/sophonjs-blockchain/issues"
   },
-  "homepage": "https://octonion.institute/susy-js/sophonjs-blockchain#readme",
+  "bundleDependencies": false,
   "dependencies": {
     "async": "^2.6.1",
     "sofashjs": "~0.0.7",
     "sophonjs-block": "~2.2.0",
     "sophonjs-common": "^1.1.0",
-    "sophonjs-util": "~6.1.0",
+    "sophonjs-util": "~6.0.0",
     "flow-stoplight": "^1.0.0",
     "level-mem": "^3.0.1",
     "lru-cache": "^5.1.1",
-    "srlp": "^2.2.2",
-    "semaphore": "^1.1.0",
-    "util": "^0.11.1"
+    "safe-buffer": "^5.1.2",
+    "semaphore": "^1.1.0"
   },
+  "deprecated": false,
+  "description": "A module to store and interact with blocks",
   "devDependencies": {
-    "@sophonjs/config-nyc": "^1.1.1",
-    "@sophonjs/config-prettier": "^1.1.1",
-    "@sophonjs/config-tsc": "^1.1.1",
-    "@sophonjs/config-tslint": "^1.1.1",
-    "@types/async": "^2.4.1",
-    "@types/bn.js": "^4.11.4",
-    "@types/lru-cache": "^5.1.0",
-    "@types/node": "^11.11.4",
-    "@types/semaphore": "^1.1.0",
-    "@types/tape": "^4.2.33",
     "coveralls": "^3.0.2",
-    "nyc": "^14.1.1",
-    "prettier": "^1.16.4",
-    "tape": "^4.9.1",
-    "ts-node": "^8.0.3",
-    "tslint": "^5.13.1",
-    "typedoc": "^0.14.2",
-    "typedoc-plugin-markdown": "^1.1.27",
-    "typescript": "^3.3.3333",
-    "typestrict": "^1.0.2"
-  }
+    "nyc": "^13.0.1",
+    "standard": "^11.0.1",
+    "tape": "^4.9.1"
+  },
+  "files": [
+    "*.js"
+  ],
+  "homepage": "https://octonion.institute/susy-js/sophonjs-blockchain#readme",
+  "keywords": [
+    "sophon",
+    "blockchain"
+  ],
+  "license": "MPL-2.0",
+  "main": "index.js",
+  "name": "sophonjs-blockchain",
+  "repository": {
+    "type": "git",
+    "url": "git+https://octonion.institute/susy-js/sophonjs-blockchain.git"
+  },
+  "scripts": {
+    "coverage": "nyc npm run test && nyc report --reporter=text-lcov > .nyc_output/lcov.info",
+    "coveralls": "npm run coverage && coveralls <.nyc_output/lcov.info",
+    "lint": "standard",
+    "test": "tape ./test/index.js"
+  },
+  "version": "3.4.0"
 }

@@ -1,8 +1,0 @@
-{
-  "extends": "@sophonjs/config-tsc",
-  "include": ["src/**/*.ts", "test/**/*.ts"],
-  "compilerOptions": {
-    "types": ["node"],
-    "typeRoots": ["node_modules/@types"]
-  }
-}
